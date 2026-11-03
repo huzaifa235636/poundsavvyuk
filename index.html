@@ -1,318 +1,93 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="scroll-smooth">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PoundSavvy UK | Budgeting &amp; Money Guides for Students and Gen-Z</title>
-<meta name="description" content="Practical UK budgeting guides, student money hacks and side hustle ideas. Master your pounds before graduation.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = { theme: { extend: {
-  fontFamily: { display: ['Fraunces','Georgia','serif'], sans: ['"Plus Jakarta Sans"','system-ui','sans-serif'] },
-  colors: { coin: '#F5B83D' }
-}}};
-</script>
-<!-- ADSENSE: after approval, paste your auto-ads / ad script here:
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
--->
-<style>
-  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-  .ad { background: repeating-linear-gradient(45deg,#f1f5f9,#f1f5f9 10px,#e8eef4 10px,#e8eef4 20px); border: 1.5px dashed #94a3b8; }
-  .article p { line-height: 1.75; margin-bottom: 1.1rem; }
-  :focus-visible { outline: 3px solid #F5B83D; outline-offset: 2px; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } * { transition: none !important; } }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Website</title>
+  <meta name="description" content="Welcome to my website.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5f6368;
+      --accent: #1f3864;
+      --card: #f5f6f8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --text: #f1f1f1;
+        --muted: #a0a4a8;
+        --accent: #8ab4f8;
+        --card: #1e1e1e;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header, main, footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo { font-size: 1.3rem; font-weight: bold; color: var(--accent); }
+    nav a {
+      margin-left: 16px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    nav a:hover { color: var(--accent); }
+    .hero { padding: 48px 0 32px; }
+    .hero h1 { font-size: 2.2rem; margin: 0 0 12px; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 600px; }
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .card { background: var(--card); padding: 20px; border-radius: 8px; }
+    .card h3 { margin-top: 0; }
+    footer {
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--card);
+      margin-top: 40px;
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body>
 
-<!-- ================= HEADER ================= -->
-<header class="bg-emerald-950 text-white sticky top-0 z-40 shadow-md">
-  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="#home" class="flex items-center gap-2 font-display text-xl font-bold">
-      <span class="grid place-items-center w-9 h-9 rounded-full bg-coin text-emerald-950 text-lg font-bold">£</span>
-      PoundSavvy <span class="text-coin">UK</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-7 text-sm font-medium" aria-label="Main">
-      <a class="hover:text-coin" href="#home">Home</a>
-      <a class="hover:text-coin" href="#tools">Budgeting Tools</a>
-      <a class="hover:text-coin" href="#hacks">Student Hacks</a>
-      <a class="hover:text-coin" href="#sidehustles">Side Hustles</a>
-      <a class="hover:text-coin" href="#about">About</a>
+  <header>
+    <div class="logo">My Website</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-emerald-900" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-  </div>
-  <nav id="mobileNav" class="hidden md:hidden border-t border-emerald-900 px-4 pb-4 text-sm font-medium" aria-label="Mobile">
-    <a class="block py-3" href="#home">Home</a>
-    <a class="block py-3" href="#tools">Budgeting Tools</a>
-    <a class="block py-3" href="#hacks">Student Hacks</a>
-    <a class="block py-3" href="#sidehustles">Side Hustles</a>
-    <a class="block py-3" href="#about">About</a>
-  </nav>
-</header>
+  </header>
 
-<!-- [AdSense Header Leaderboard] 728x90 desktop / 320x100 mobile. Sits BELOW the nav, never inside it. -->
-<div class="max-w-6xl mx-auto px-4 pt-4">
-  <p class="text-[11px] text-slate-500 text-center mb-1">Advertisement</p>
-  <div class="ad rounded-md min-h-[100px] md:min-h-[90px] grid place-items-center text-slate-500 text-sm text-center">
-    [AdSense Header Leaderboard]
-    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="0000000001" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-  </div>
-</div>
-
-<!-- ================= HERO ================= -->
-<section id="home" class="max-w-6xl mx-auto px-4 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-center">
-  <div>
-    <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight text-emerald-950">Master your pounds before graduation.</h1>
-    <p class="mt-5 text-lg text-slate-600 max-w-prose">Plain-English money guides for UK students and Gen-Z: stretch your maintenance loan, cut your weekly spend and start earning on the side.</p>
-    <div class="mt-7 flex flex-wrap gap-3">
-      <a href="#tools" class="px-6 py-3 rounded-lg bg-emerald-700 text-white font-semibold hover:bg-emerald-800 transition">Try the weekly budget calculator</a>
-      <a href="#guides" class="px-6 py-3 rounded-lg border-2 border-emerald-700 text-emerald-800 font-semibold hover:bg-emerald-50 transition">Read the latest guides</a>
-    </div>
-  </div>
-  <!-- Sample week: a real picture of where a student's money goes -->
-  <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
-    <p class="font-semibold text-emerald-950">A sample student week on £120</p>
-    <div class="mt-4 flex h-6 rounded-full overflow-hidden" role="img" aria-label="Rent 50 percent, groceries 20 percent, transport 10 percent, fun 10 percent, left over 10 percent">
-      <div class="bg-emerald-900" style="width:50%"></div>
-      <div class="bg-emerald-600" style="width:20%"></div>
-      <div class="bg-emerald-400" style="width:10%"></div>
-      <div class="bg-coin" style="width:10%"></div>
-      <div class="bg-slate-300" style="width:10%"></div>
-    </div>
-    <ul class="mt-4 grid grid-cols-2 gap-y-2 text-sm">
-      <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-emerald-900"></span>Rent £60</li>
-      <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-emerald-600"></span>Groceries £24</li>
-      <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-emerald-400"></span>Transport £12</li>
-      <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-coin"></span>Fun £12</li>
-      <li class="flex items-center gap-2 col-span-2"><span class="w-3 h-3 rounded-sm bg-slate-300"></span>Left to save £12</li>
-    </ul>
-    <p class="mt-4 text-xs text-slate-500">Illustrative example only, not advice.</p>
-  </div>
-</section>
-
-<!-- ================= TRENDING GUIDES ================= -->
-<section id="guides" class="bg-white border-y border-slate-200">
-  <div class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="font-display text-3xl font-bold text-emerald-950">Trending UK financial guides</h2>
-    <p class="mt-2 text-slate-600">Fresh, practical reads for your student budget.</p>
-    <div class="mt-8 grid gap-6 md:grid-cols-3">
-
-      <article id="hacks" class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 flex flex-col">
-        <div class="h-32 bg-emerald-900 grid place-items-center text-5xl" aria-hidden="true">🏙️</div>
-        <div class="p-5 flex flex-col flex-1">
-          <p class="text-sm font-semibold text-emerald-700">Student Hacks</p>
-          <h3 class="mt-1 font-display text-xl font-bold text-emerald-950 leading-snug"><a href="#featured" class="hover:underline">How to live on £50 a week in London</a></h3>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">London is pricey, but a tight weekly plan is possible. We break down rent splits, cheap food shops and getting around without wrecking your balance.</p>
-          <a href="#featured" class="mt-4 pt-2 text-sm font-semibold text-emerald-700 hover:underline mt-auto">Read the guide</a>
-        </div>
-      </article>
-
-      <article id="sidehustles" class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 flex flex-col">
-        <div class="h-32 bg-emerald-700 grid place-items-center text-5xl" aria-hidden="true">💼</div>
-        <div class="p-5 flex flex-col flex-1">
-          <p class="text-sm font-semibold text-emerald-700">Side Hustles</p>
-          <h3 class="mt-1 font-display text-xl font-bold text-emerald-950 leading-snug"><a href="#featured" class="hover:underline">Top 5 side hustles for UK students in 2026</a></h3>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">From tutoring to freelance gigs that fit around lectures, here are five ways to earn extra cash, plus what to know about tax on your side income.</p>
-          <a href="#featured" class="mt-4 pt-2 text-sm font-semibold text-emerald-700 hover:underline mt-auto">Read the guide</a>
-        </div>
-      </article>
-
-      <article class="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 flex flex-col">
-        <div class="h-32 bg-slate-800 grid place-items-center text-5xl" aria-hidden="true">📱</div>
-        <div class="p-5 flex flex-col flex-1">
-          <p class="text-sm font-semibold text-emerald-700">Budgeting Tools</p>
-          <h3 class="mt-1 font-display text-xl font-bold text-emerald-950 leading-snug"><a href="#featured" class="hover:underline">Best fee-free digital banking apps in the UK</a></h3>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Spending pots, instant notifications and no monthly fees. We compare what matters when you are choosing an app for your student account.</p>
-          <a href="#featured" class="mt-4 pt-2 text-sm font-semibold text-emerald-700 hover:underline mt-auto">Read the guide</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= MAIN + SIDEBAR ================= -->
-<div class="max-w-6xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-10">
-
-  <main class="lg:col-span-2 space-y-12">
-
-    <!-- CALCULATOR -->
-    <section id="tools" aria-labelledby="calcTitle" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
-      <h2 id="calcTitle" class="font-display text-3xl font-bold text-emerald-950">UK weekly expense calculator</h2>
-      <p class="mt-2 text-slate-600">Enter what comes in and what goes out each week. Your balance updates as you type.</p>
-
-      <div class="mt-6 grid sm:grid-cols-2 gap-4">
-        <label class="block sm:col-span-2">
-          <span class="text-sm font-semibold">Weekly budget (loan, wages, parental help)</span>
-          <div class="mt-1 flex items-center rounded-lg border border-slate-300 focus-within:ring-2 focus-within:ring-emerald-600 bg-white">
-            <span class="pl-3 text-slate-500">£</span>
-            <input id="income" type="number" min="0" step="0.01" inputmode="decimal" placeholder="120" class="w-full p-3 rounded-lg outline-none bg-transparent">
-          </div>
-        </label>
-        <label class="block"><span class="text-sm font-semibold">Rent</span>
-          <div class="mt-1 flex items-center rounded-lg border border-slate-300 focus-within:ring-2 focus-within:ring-emerald-600 bg-white"><span class="pl-3 text-slate-500">£</span>
-          <input id="rent" type="number" min="0" step="0.01" inputmode="decimal" placeholder="60" class="w-full p-3 rounded-lg outline-none bg-transparent"></div></label>
-        <label class="block"><span class="text-sm font-semibold">Groceries</span>
-          <div class="mt-1 flex items-center rounded-lg border border-slate-300 focus-within:ring-2 focus-within:ring-emerald-600 bg-white"><span class="pl-3 text-slate-500">£</span>
-          <input id="groceries" type="number" min="0" step="0.01" inputmode="decimal" placeholder="24" class="w-full p-3 rounded-lg outline-none bg-transparent"></div></label>
-        <label class="block"><span class="text-sm font-semibold">Transport</span>
-          <div class="mt-1 flex items-center rounded-lg border border-slate-300 focus-within:ring-2 focus-within:ring-emerald-600 bg-white"><span class="pl-3 text-slate-500">£</span>
-          <input id="transport" type="number" min="0" step="0.01" inputmode="decimal" placeholder="12" class="w-full p-3 rounded-lg outline-none bg-transparent"></div></label>
-        <label class="block"><span class="text-sm font-semibold">Eating out and fun</span>
-          <div class="mt-1 flex items-center rounded-lg border border-slate-300 focus-within:ring-2 focus-within:ring-emerald-600 bg-white"><span class="pl-3 text-slate-500">£</span>
-          <input id="fun" type="number" min="0" step="0.01" inputmode="decimal" placeholder="12" class="w-full p-3 rounded-lg outline-none bg-transparent"></div></label>
-      </div>
-
-      <div id="resultBox" class="mt-6 rounded-xl p-5 bg-slate-100 transition-colors" aria-live="polite">
-        <p class="text-sm font-semibold text-slate-600">Left over this week</p>
-        <p id="remaining" class="font-display text-4xl font-bold text-slate-700">£0.00</p>
-        <div class="mt-3 h-3 rounded-full bg-white overflow-hidden"><div id="bar" class="h-full bg-emerald-600 transition-all duration-300" style="width:0%"></div></div>
-        <p id="spentLine" class="mt-2 text-sm text-slate-600"></p>
-        <p id="msg" class="mt-3 font-medium text-slate-700">Enter your weekly budget to get started.</p>
-        <p id="monthly" class="mt-1 text-sm text-slate-600"></p>
-      </div>
-      <button id="resetBtn" type="button" class="mt-4 text-sm font-semibold text-emerald-700 hover:underline">Clear all fields</button>
-    </section>
-
-    <!-- FEATURED ARTICLE (typography sample + in-article ad) -->
-    <article id="featured" class="article bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8">
-      <p class="text-sm font-semibold text-emerald-700">Student Hacks</p>
-      <h2 class="mt-1 font-display text-3xl font-bold text-emerald-950 leading-tight">How to live on £50 a week in London</h2>
-      <p class="mt-2 text-sm text-slate-500">Sample article layout. Replace with your own original content.</p>
-
-      <div class="mt-6 text-slate-700 max-w-prose">
-        <p>Living in London on a tight budget sounds impossible, yet thousands of students manage it every year. The trick is not to cut everything, but to know which costs you can control and which ones you cannot.</p>
-        <p>Start with your fixed costs. Rent usually takes the biggest bite, so sharing a house and checking whether bills are included can change your whole week. Once the fixed costs are covered, the rest becomes a simple weekly pot.</p>
-
-        <!-- [AdSense In-Article Responsive] Between paragraphs, with clear space either side. -->
-        <div class="my-8">
-          <p class="text-[11px] text-slate-500 text-center mb-1">Advertisement</p>
-          <div class="ad rounded-md min-h-[250px] grid place-items-center text-slate-500 text-sm text-center">
-            [AdSense In-Article Responsive]
-            <!-- <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-XXXX" data-ad-slot="0000000002"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-          </div>
-        </div>
-
-        <h3 class="font-display text-2xl font-bold text-emerald-950 mt-2 mb-3">Three habits that make the biggest difference</h3>
-        <ul class="list-disc pl-5 space-y-2 mb-4 leading-relaxed">
-          <li>Plan your meals before you shop, so you only buy what you will actually eat.</li>
-          <li>Use student discounts and railcards, and check them before every journey.</li>
-          <li>Give yourself a small weekly fun budget so you are not tempted to overspend.</li>
-        </ul>
-        <p>Use the calculator above to test your own numbers and see how small changes add up over a month.</p>
-      </div>
-    </article>
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="space-y-8" aria-label="Sidebar">
-    <!-- [AdSense Sidebar Banner] 300x250 -->
-    <div>
-      <p class="text-[11px] text-slate-500 text-center mb-1">Advertisement</p>
-      <div class="ad rounded-md min-h-[250px] grid place-items-center text-slate-500 text-sm text-center">
-        [AdSense Sidebar Banner]
-        <!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXX" data-ad-slot="0000000003"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-      </div>
-    </div>
-
-    <section class="bg-emerald-950 text-white rounded-2xl p-6">
-      <h2 class="font-display text-xl font-bold">Quick money tips</h2>
-      <ul class="mt-3 space-y-3 text-sm text-emerald-50 leading-relaxed">
-        <li>Check your student account for a 0% overdraft and know the limit.</li>
-        <li>Move spare cash into a savings pot on payday, not at the end of the month.</li>
-        <li>Review subscriptions every term and cancel what you do not use.</li>
-      </ul>
-    </section>
-
-    <!-- [AdSense Sidebar Sticky] 300x600, stays in view on desktop only; keeps its own space on mobile -->
-    <div class="hidden lg:block lg:sticky lg:top-24">
-      <p class="text-[11px] text-slate-500 text-center mb-1">Advertisement</p>
-      <div class="ad rounded-md min-h-[600px] grid place-items-center text-slate-500 text-sm text-center">
-        [AdSense Sidebar Sticky 300x600]
-      </div>
-    </div>
-  </aside>
-</div>
-
-<!-- ================= ABOUT ================= -->
-<section id="about" class="bg-white border-t border-slate-200">
-  <div class="max-w-3xl mx-auto px-4 py-12 text-center">
-    <h2 class="font-display text-3xl font-bold text-emerald-950">About PoundSavvy UK</h2>
-    <p class="mt-4 text-slate-600 leading-relaxed">We write clear, honest money guides for students and young adults across the UK. No jargon, no hype, just practical ways to make your money go further.</p>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="bg-emerald-950 text-emerald-100">
-  <div class="max-w-6xl mx-auto px-4 py-10 text-sm">
-    <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center">
-      <a class="hover:text-coin" href="#about">About</a>
-      <a class="hover:text-coin" href="#">Contact</a>
-      <a class="hover:text-coin" href="#">Privacy Policy</a>
-      <a class="hover:text-coin" href="#">Cookie Policy</a>
-      <a class="hover:text-coin" href="#">Disclaimer</a>
-    </div>
-    <p class="mt-6 text-center text-emerald-300 max-w-2xl mx-auto leading-relaxed">PoundSavvy UK shares general information only and is not regulated financial advice. Always check the details before making a money decision.</p>
-    <p class="mt-3 text-center text-emerald-400">&copy; 2026 PoundSavvy UK</p>
-  </div>
-</footer>
-
-<script>
-// Mobile menu
-const menuBtn = document.getElementById('menuBtn'), mobileNav = document.getElementById('mobileNav');
-menuBtn.addEventListener('click', () => {
-  const open = mobileNav.classList.toggle('hidden') === false;
-  menuBtn.setAttribute('aria-expanded', open);
-});
-mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileNav.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', false); }));
-
-// Weekly expense calculator
-const ids = ['income','rent','groceries','transport','fun'];
-const gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' });
-const num = id => { const v = parseFloat(document.getElementById(id).value); return isNaN(v) || v < 0 ? 0 : v; };
-const $ = id => document.getElementById(id);
-
-function calc() {
-  const income = num('income');
-  const spent = num('rent') + num('groceries') + num('transport') + num('fun');
-  const left = income - spent;
-  const pct = income > 0 ? Math.min(100, (spent / income) * 100) : 0;
-  const box = $('resultBox'), rem = $('remaining'), bar = $('bar');
-
-  rem.textContent = gbp.format(left);
-  bar.style.width = pct + '%';
-  $('spentLine').textContent = income > 0 ? 'You are spending ' + gbp.format(spent) + ' (' + Math.round((spent / income) * 100) + '% of your budget).' : '';
-
-  let state = 'neutral';
-  if (income <= 0 && spent <= 0) { $('msg').textContent = 'Enter your weekly budget to get started.'; $('monthly').textContent = ''; }
-  else if (left < 0) { state = 'bad'; $('msg').textContent = 'You are ' + gbp.format(Math.abs(left)) + ' over budget this week. Try trimming groceries or fun first.'; }
-  else if (income > 0 && left < income * 0.1) { state = 'warn'; $('msg').textContent = 'Tight, but still in the black. A small buffer will help with surprises.'; }
-  else if (income > 0) { state = 'good'; $('msg').textContent = 'Nice work. You have room to save or build an emergency pot.'; }
-  if (income <= 0 && spent > 0) { state = 'bad'; $('msg').textContent = 'Add your weekly budget to see how much is left.'; }
-
-  $('monthly').textContent = income > 0 ? 'Over a month that is roughly ' + gbp.format(left * 52 / 12) + ' left over.' : '';
-
-  const styles = {
-    neutral: ['bg-slate-100','text-slate-700','bg-emerald-600'],
-    good:    ['bg-emerald-100','text-emerald-800','bg-emerald-600'],
-    warn:    ['bg-amber-100','text-amber-800','bg-amber-500'],
-    bad:     ['bg-red-100','text-red-700','bg-red-500']
-  };
-  box.className = 'mt-6 rounded-xl p-5 transition-colors ' + styles[state][0];
-  rem.className = 'font-display text-4xl font-bold ' + styles[state][1];
-  bar.className = 'h-full transition-all duration-300 ' + styles[state][2];
-}
-ids.forEach(id => $(id).addEventListener('input', calc));
-$('resetBtn').addEventListener('click', () => { ids.forEach(id => $(id).value = ''); calc(); });
-calc();
-</script>
-</body>
-</html>
+  <main>
+    <section class="hero">
