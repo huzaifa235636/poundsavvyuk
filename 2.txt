@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | PoundSavvy UK</title>
+<meta name="description" content="Contact PoundSavvy UK with questions, corrections or topic ideas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { display: ['Fraunces','Georgia','serif'], sans: ['"Plus Jakarta Sans"','system-ui','sans-serif'] },
+  colors: { coin: '#F5B83D' } } } };
+</script>
+<style>
+  body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+  .prose h2, .prose h3 { font-family: 'Fraunces', Georgia, serif; color: #022c22; }
+  :focus-visible { outline: 3px solid #F5B83D; outline-offset: 2px; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<header class="bg-emerald-950 text-white sticky top-0 z-40 shadow-md">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 font-display text-xl font-bold">
+      <span class="grid place-items-center w-9 h-9 rounded-full bg-coin text-emerald-950 text-lg font-bold">£</span>
+      PoundSavvy <span class="text-coin">UK</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium" aria-label="Main">
+      <a class="hover:text-coin" href="index.html">Home</a>
+      <a class="hover:text-coin" href="index.html#tools">Tools</a>
+      <a class="hover:text-coin" href="index.html#guides">Articles</a>
+      <a class="hover:text-coin" href="about.html">About</a>
+      <a class="hover:text-coin" href="contact.html">Contact</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-emerald-900" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav id="mobileNav" class="hidden md:hidden border-t border-emerald-900 px-4 pb-4 text-sm font-medium" aria-label="Mobile">
+    <a class="block py-3" href="index.html">Home</a>
+    <a class="block py-3" href="index.html#tools">Tools</a>
+    <a class="block py-3" href="index.html#guides">Articles</a>
+    <a class="block py-3" href="about.html">About</a>
+    <a class="block py-3" href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 py-10 md:py-14">
+  <p class="text-sm text-slate-500"><a class="hover:underline" href="index.html">Home</a> / Contact</p>
+  <h1 class="mt-3 font-display text-4xl md:text-5xl font-bold leading-tight text-emerald-950">Contact us</h1>
+  <p class="mt-3 text-sm text-slate-500">We read every message</p>
+
+  <article class="prose prose-lg prose-slate max-w-none mt-8">
+    <p>We would love to hear from you. Use the form below or email us directly at <a href="mailto:hello@poundsavvy.co.uk">hello@poundsavvy.co.uk</a>.</p>
+    <ul>
+      <li>Spotted a mistake or out-of-date detail? Tell us and we will check it.</li>
+      <li>Have an idea for a guide? Let us know what you would like us to cover.</li>
+      <li>Want to ask about our privacy practices? See our <a href="privacy-policy.html">Privacy Policy</a>.</li>
+    </ul>
+    <p>We cannot give personal financial advice, but we read every message.</p>
+  </article>
+
+  <form id="contactForm" class="mt-8 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 grid gap-4" novalidate>
+    <label class="block"><span class="text-sm font-semibold">Your name</span>
+      <input id="cName" type="text" class="mt-1 w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-600 outline-none"></label>
+    <label class="block"><span class="text-sm font-semibold">Your email</span>
+      <input id="cEmail" type="email" class="mt-1 w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-600 outline-none"></label>
+    <label class="block"><span class="text-sm font-semibold">Message</span>
+      <textarea id="cMsg" rows="5" class="mt-1 w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-emerald-600 outline-none"></textarea></label>
+    <p id="cNote" class="text-sm text-red-700 hidden" role="alert">Please write a message first.</p>
+    <div><button type="submit" class="px-7 py-3 rounded-lg bg-emerald-700 text-white font-semibold hover:bg-emerald-800 transition">Send message</button></div>
+    <p class="text-xs text-slate-500">This opens your email app with the message ready to send. Nothing is stored on this website.</p>
+  </form>
+
+</main>
+
+<footer class="bg-emerald-950 text-emerald-100">
+  <div class="max-w-6xl mx-auto px-4 py-12 text-sm">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div>
+        <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold text-white">
+          <span class="grid place-items-center w-8 h-8 rounded-full bg-coin text-emerald-950 font-bold">£</span>
+          PoundSavvy <span class="text-coin">UK</span>
+        </a>
+        <p class="mt-3 text-emerald-300 leading-relaxed">Clear, honest money guides for students and young adults across the UK.</p>
+      </div>
+      <div>
+        <h3 class="font-display text-base font-bold text-white">Quick links</h3>
+        <ul class="mt-3 space-y-2">
+          <li><a class="hover:text-coin" href="index.html#guides">Articles</a></li>
+          <li><a class="hover:text-coin" href="index.html#tools">Savings Calculator</a></li>
+          <li><a class="hover:text-coin" href="about.html">About</a></li>
+          <li><a class="hover:text-coin" href="contact.html">Contact</a></li>
+          <li><a class="hover:text-coin" href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-display text-base font-bold text-white">Contact</h3>
+        <ul class="mt-3 space-y-2">
+          <li>Email: <a class="hover:text-coin underline" href="mailto:hello@poundsavvy.co.uk">hello@poundsavvy.co.uk</a></li>
+          <li>Based in the United Kingdom</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-emerald-900 text-center">
+      <p class="text-emerald-300 max-w-2xl mx-auto leading-relaxed">PoundSavvy UK shares general information only and is not regulated financial advice. Always check the details before making a money decision.</p>
+      <p class="mt-3 text-emerald-400">&copy; 2026 PoundSavvy UK. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn'), mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('cName').value.trim();
+    const email = document.getElementById('cEmail').value.trim();
+    const msg = document.getElementById('cMsg').value.trim();
+    const note = document.getElementById('cNote');
+    if (!msg) { note.classList.remove('hidden'); return; }
+    note.classList.add('hidden');
+    const body = msg + '\n\nFrom: ' + (name || 'Not given') + (email ? ' (' + email + ')' : '');
+    const a = document.createElement('a');
+    a.href = 'mailto:hello@poundsavvy.co.uk?subject=' + encodeURIComponent('Message from PoundSavvy UK website') + '&body=' + encodeURIComponent(body);
+    a.click();
+  });
+</script>
+</body>
+</html>
